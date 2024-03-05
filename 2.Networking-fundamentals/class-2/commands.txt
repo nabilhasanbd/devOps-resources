@@ -1,0 +1,17 @@
+$ docker inspect test
+$ docker inspect test | grep - image
+$ docker inspect test | grep - ip
+$ ip addr show docker0
+
+
+# to validate
+$ ip addr show docker0
+$ sudo !!
+
+#now if i listen 
+$ curl localhost:5000
+
+$ sudo tcpdump -v -i docker0 tcp
+
+#when we try to enter any container of docker
+$ docker exec -it test bash
