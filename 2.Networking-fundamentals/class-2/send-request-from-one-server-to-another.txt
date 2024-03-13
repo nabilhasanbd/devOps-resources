@@ -1,0 +1,32 @@
+Here we will create two nginx server in docker and then we will send request from one server/container to another/container.
+
+1. create two server
+	$ docker run --name=web1 --rm nginx
+	$ docker run --name=web2 --rm nginx
+	
+	Note: this two must be opened in different tab and running
+
+2. Enter into web1
+	$ docker exec -it web1 bash
+	$ exit (not necessary just to exit)
+	
+3. To see in details 
+	$ docker inspect web1 | grep -i ip 
+	
+4. Enter into web2 
+	$ docker exec -it web2 bash
+
+5. install listerners
+	$ apt update
+	$ apt install tcpdump
+	$ curl localhost:80/google.com ( to check if it is working or not)
+	$ ip link ( Lists all network interfaces available in the container, along with some status information about each one)
+	$ apt install iproute2 
+	Note : iproute2 a collection of utilities for controlling TCP/IP networking and traffic control in Linux
+	$ ip link
+	$ ip addr (Shows detailed information about all network interfaces, including their IP addresses)
+	$ tcpdump -v -i eth0 tcp port 80
+	Note : Starts capturing and displaying packets passing through the eth0 interface on TCP port 80,
+	which is the default port for HTTP traffic.
+	The -v flag increases the verbosity of the output to provide more detailed information.
+	

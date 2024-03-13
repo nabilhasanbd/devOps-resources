@@ -15,3 +15,24 @@ $ sudo tcpdump -v -i docker0 tcp
 
 #when we try to enter any container of docker
 $ docker exec -it test bash
+
+# to link
+$ ip link
+$ apt update -y
+$ apt install iptoute2
+$ ip link
+
+#lets try to listen
+$ sudo tcpdump -v -i docker0 tcp
+in another terminal 
+$ docker exec -it test bash
+$ apt install tcpdump
+
+$ sudo tcpdump -i lo -v tcp port 5000
+
+$ dig localhost
+$ nslookup localhost
+
+$ iptables t nat --list
+$ iptables t nat --list | grep -i 5000
+
