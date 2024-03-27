@@ -1,0 +1,35 @@
+Linux Network Stack
+
+In Linux networking, within the Linux network stack, routes define traffic paths, iptables configures packet filtering, lo is a local 
+loopback interface for testing, and eth0 is the primary Ethernet interface for external connections. Let's inspect the network stack, in short.
+
+Network interfaces allow us to establish communication between a network and a device.
+
+ip link list
+A route in networking specifies the path for network traffic from source to destination. View the routing table:
+
+ip route show
+iptables is a user-space utility for configuring packet filter rules in the Linux kernel's Netfilter framework. View iptables rules:
+
+iptables -L
+Create Custom Network Namespace
+Let's create a custom namespace using ip netns add utiliy.
+
+sudo ip netns add ryuzaki
+sudo ip netns list
+Now, to enter a network namespace in Linux:
+
+ip netns exec is part of the iproute2 package and is often used for managing network namespaces.
+
+sudo ip netns exec ryuzaki bash
+nsenter
+
+The nsenter utility is aslo commonly used to enter into namespaces in Linux, including network namespaces.
+
+sudo nsenter --net=/var/run/netns/ryuzaki bash
+Now, to check the network interfaces inside the new ns.
+
+ip link show
+To check for iptable rules for custom ns.
+
+ifconfig lo

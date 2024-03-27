@@ -1,0 +1,30 @@
+Docker lab 1
+
+$ sudo apt update
+$ sudo apt install net-tools
+$ sudo apt install iproute2
+$ ip link
+$ sudo apt install iptables -y
+$ sudo iptables -L
+
+$ ip link list
+$ ip addr
+$ ip route show
+$ route
+
+---------------------------------------
+
+Docker lab 2 
+
+$ sudo apt update
+$ sudo apt install net-tools
+$ sudo apt install iproute2 -y
+$ sudo apt install tcpdump
+$ sudo apt install iputils-ping
+
+MD MASUDUL ALAM
+2227 0401 0015 6461
+10/28
+306
+
+sudo tcpdump -i veth-red
