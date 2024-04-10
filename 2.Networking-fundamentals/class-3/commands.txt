@@ -27,4 +27,8 @@ MD MASUDUL ALAM
 10/28
 306
 
-sudo tcpdump -i veth-red
+sudo apt update
+sudo apt install net-tools
+sudo apt install iproute2 -y
+sudo apt install tcpdump
+sudo apt install iputils-ping

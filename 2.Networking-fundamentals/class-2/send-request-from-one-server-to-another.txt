@@ -30,3 +30,7 @@ Here we will create two nginx server in docker and then we will send request fro
 	which is the default port for HTTP traffic.
 	The -v flag increases the verbosity of the output to provide more detailed information.
 	
+6. Make the request from web1 
+	$ docker inspect web2 | grep -i ip
+	$ curl (ip of web2)
+	
