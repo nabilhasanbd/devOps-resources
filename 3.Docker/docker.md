@@ -3,3 +3,5 @@ Docker image is lightwight. stand-alone, executable package created from dockerf
 Docker volume 
 
 Docker Network 
+
+Layer caching
