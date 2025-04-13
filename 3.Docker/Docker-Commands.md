@@ -34,3 +34,14 @@ docker ps -a
 docker rm "container-name" => instead of name i can use the 1st 3 letters of the container id
 dokcer rm "873 872 998" => will remove 3 container having the 1st 3 container id with this
 
+docker rm putjar => Removes (deletes) a stopped container named putjar
+docker rmi busybus => Removes (deletes) a Docker image named busybus from your system.
+
+While removing a image 1st we have to remove the container then the image .
+
+docker pull ubuntu
+
+docker run -d ubuntu sleep 100 => Runs an Ubuntu container in detached mode (-d) that executes the sleep 100 command, keeping it alive for 100 seconds.
+
+docker exec cla19d3a7ca7 cat /etc/*release* => It runs the cat /etc/*release* command inside the running container with ID cla19d3a7ca7, to display the 
+    Linux distribution information (like Ubuntu, Debian, etc.).
