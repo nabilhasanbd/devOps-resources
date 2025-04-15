@@ -45,3 +45,5 @@ docker run -d ubuntu sleep 100 => Runs an Ubuntu container in detached mode (-d)
 
 docker exec cla19d3a7ca7 cat /etc/*release* => It runs the cat /etc/*release* command inside the running container with ID cla19d3a7ca7, to display the 
     Linux distribution information (like Ubuntu, Debian, etc.).
+
+docker run ubuntu cat /etc/*release*
