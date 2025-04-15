@@ -44,6 +44,21 @@ docker run -p 8080:8080 jenkins/jenkins
 or
 docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins
 
+docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins
+    docker run	একটি নতুন Docker কন্টেইনার চালু করে।
+    -p 8080:8080	হোস্টের 8080 পোর্ট কে কন্টেইনারের 8080 পোর্টের সাথে যুক্ত করে (Jenkins ওয়েব ইন্টারফেস)।
+    -p 50000:50000	Jenkins এজেন্ট (বিল্ড ওয়ার্কার) কমিউনিকেশনের জন্য পোর্ট ম্যাপ করে।
+    -d	কন্টেইনারটি ব্যাকগ্রাউন্ডে (ডিট্যাচড মোডে) চালায়।
+    -v jenkins_home:/var/jenkins_home	jenkins_home নামে একটি ডকার ভলিউম তৈরি করে Jenkins-এর সমস্ত ডেটা (/var/jenkins_home) সংরক্ষণ করে।
+    jenkins/jenkins	অফিসিয়াল Jenkins Docker ইমেজ ব্যবহার করে (ডিফল্টভাবে latest ট্যাগ)।
+
+    এটি চালানোর পরে কী হবে?
+    Jenkins সার্ভার ব্যাকগ্রাউন্ডে চলতে শুরু করবে।
+    আপনি ব্রাউজারে http://localhost:8080 এ গিয়ে Jenkins অ্যাক্সেস করতে পারবেন।
+    প্রথমবার প্রবেশ করতে ইনিশিয়াল অ্যাডমিন পাসওয়ার্ড প্রয়োজন হবে
+
+docker logs "container-id"
+    get the password from log and go to localhost:8080 , then paste the password to enter jenkins 
 
 
 
