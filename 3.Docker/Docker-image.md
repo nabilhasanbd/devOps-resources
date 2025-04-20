@@ -62,7 +62,10 @@ nano Dockerfile
 11. Build Docker Image
 Make sure Docker is installed and the daemon is running.
 
-docker build -t flask-hello .
+sudo docker build -t flask-hello .
+
+12. Run the container
+sudo docker run -p 5000:5000 flask-hello
 
 12. Visit in Browser
 http://localhost:5000
